@@ -17,6 +17,9 @@
 	// If true, ':' and ex commands will be available.
 	"vintageous_enable_cmdline_mode": true,
 
+	// If true, insert mode will be used as default
+	"vintageous_start_on_insert_mode": false,
+
 	// If true, the current mode will be reset to normal mode when a tab gets activated.
 	"vintageous_reset_mode_when_switching_tabs": true,
 

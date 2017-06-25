@@ -74,6 +74,10 @@ def _init_vintageous(view, new_session=False):
         state.reset_during_init = True
         return
 
+    if state.settings.view['vintageous_start_on_insert_mode']:
+        view.window().run_command('_enter_insert_mode')
+        return
+
     # Non-standard user setting.
     reset = state.settings.view['vintageous_reset_mode_when_switching_tabs']
     # XXX: If the view was already in normal mode, we still need to run the
