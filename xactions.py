@@ -303,6 +303,14 @@ class _enter_normal_mode(ViTextCommandBase):
     def run(self, edit, mode=None, from_init=False):
         state = self.state
 
+        if len(self.view.sel()) > 1:
+        # if not self.view.settings().get('command_mode') and len(self.view.sel()) > 1:
+            s0 = utils.first_sel(self.view)
+            self.view.sel().clear()
+            self.view.sel().add(s0)
+            state.scroll_into_view()
+            return
+
         self.view.window().run_command('hide_auto_complete')
         self.view.window().run_command('hide_overlay')
 
