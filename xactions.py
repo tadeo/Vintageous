@@ -304,7 +304,8 @@ class _enter_normal_mode(ViTextCommandBase):
         state = self.state
 
         if len(self.view.sel()) > 1:
-        # if not self.view.settings().get('command_mode') and len(self.view.sel()) > 1:
+        # if mode != modes.NORMAL and len(self.view.sel()) > 1:
+        # if not self.view.settings().get('inverse_caret_state') and len(self.view.sel()) > 1:
             s0 = utils.first_sel(self.view)
             self.view.sel().clear()
             self.view.sel().add(s0)
